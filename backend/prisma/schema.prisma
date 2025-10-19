@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Teacher {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String @unique
+  institute String
+  password  String
+  quizzes   Quiz[] // One-to-many relation
+}
+
+model Quiz {
+  id        String      @id @default(auto()) @map("_id") @db.ObjectId
+  quizName  String
+  date      DateTime
+  startTime String
+  endTime   String
+  teacher   Teacher     @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  teacherId String      @db.ObjectId
+  isActive  Boolean     @default(false)
+  // questions Questions[]
+  attempts  Attempt[]   // One-to-Many relation (Students attempting quizzes)
+}
+
+model Questions {
+  id             String     @id @map("_id")   // Required for MongoDB custom string IDs
+  question       String
+  optionA        String
+  optionB        String
+  optionC        String
+  optionD        String
+  correctAnswer  String
+  difficulty     String
+  images         String[]
+  responses      Response[] 
+}
+
+model Student {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  email     String @unique
+  institute String?
+  password  String
+  attempts  Attempt[]  
+}
+
+model Attempt {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  student    Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  studentId  String   @db.ObjectId
+  quiz       Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  quizId     String   @db.ObjectId
+  score      Int      @default(0) 
+  submitted  Boolean  @default(false) 
+  responses  Response[] 
+}
+model Response {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  attempt        Attempt   @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  attemptId      String    @db.ObjectId
+  question       Questions @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  questionId     String    // ✅ No @db.ObjectId
+  selectedAnswer String
+  isCorrect      Boolean   @default(false)
+}

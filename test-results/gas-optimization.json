@@ -1,0 +1,232 @@
+{
+  "functions": {
+    "storePaper": {
+      "samples": [
+        141352,
+        141352,
+        141352,
+        141352,
+        141352
+      ],
+      "average": 141352,
+      "min": 141352,
+      "max": 141352
+    },
+    "storeStudentResponse": {
+      "samples": [
+        95798,
+        95798,
+        95798,
+        95798,
+        95798
+      ],
+      "average": 95798,
+      "min": 95798,
+      "max": 95798
+    },
+    "addStudentScore": {
+      "samples": [
+        90708,
+        90708,
+        90708,
+        90708,
+        90708
+      ],
+      "average": 90708,
+      "min": 90708,
+      "max": 90708
+    },
+    "storeQuizScore": {
+      "samples": [
+        114054,
+        114054,
+        114054,
+        114054,
+        114054
+      ],
+      "average": 114054,
+      "min": 114054,
+      "max": 114054
+    }
+  },
+  "comparisons": {
+    "cidLength": [
+      {
+        "name": "Short CID (10 chars)",
+        "gas": 96187,
+        "length": 10
+      },
+      {
+        "name": "Normal CID (46 chars)",
+        "gas": 141472,
+        "length": 46
+      },
+      {
+        "name": "Long CID (80 chars)",
+        "gas": 164501,
+        "length": 80
+      }
+    ],
+    "paperIdLength": [
+      {
+        "name": "Short ID",
+        "gas": 141124,
+        "length": 2
+      },
+      {
+        "name": "Medium ID",
+        "gas": 141316,
+        "length": 18
+      },
+      {
+        "name": "Long ID",
+        "gas": 141993,
+        "length": 45
+      }
+    ],
+    "batchPapers": [
+      {
+        "count": 1,
+        "totalGas": 141376,
+        "avgGas": 141376
+      },
+      {
+        "count": 5,
+        "totalGas": 706880,
+        "avgGas": 141376
+      },
+      {
+        "count": 10,
+        "totalGas": 1413760,
+        "avgGas": 141376
+      }
+    ],
+    "batchResponses": [
+      {
+        "count": 1,
+        "totalGas": 95834,
+        "avgGas": 95834
+      },
+      {
+        "count": 5,
+        "totalGas": 419611,
+        "avgGas": 83922
+      },
+      {
+        "count": 10,
+        "totalGas": 660545,
+        "avgGas": 66054
+      }
+    ]
+  },
+  "recommendations": [
+    "Consider using shorter CID representations or off-chain storage for metadata",
+    "Use events instead of storage where possible for historical data",
+    "Implement pagination for array retrievals to prevent out-of-gas errors",
+    "Consider using bytes32 for IDs instead of strings to save gas",
+    "Batch operations when possible to amortize transaction costs",
+    "Use calldata instead of memory for function parameters when applicable"
+  ],
+  "costProjections": [
+    {
+      "gasPrice": "Low (10 Gwei)",
+      "costs": {
+        "storePaper": {
+          "gas": 141352,
+          "eth": "0.001414",
+          "usd": "2.8270"
+        },
+        "storeStudentResponse": {
+          "gas": 95798,
+          "eth": "0.000958",
+          "usd": "1.9160"
+        },
+        "addStudentScore": {
+          "gas": 90708,
+          "eth": "0.000907",
+          "usd": "1.8142"
+        },
+        "storeQuizScore": {
+          "gas": 114054,
+          "eth": "0.001141",
+          "usd": "2.2811"
+        }
+      }
+    },
+    {
+      "gasPrice": "Medium (50 Gwei)",
+      "costs": {
+        "storePaper": {
+          "gas": 141352,
+          "eth": "0.007068",
+          "usd": "14.1352"
+        },
+        "storeStudentResponse": {
+          "gas": 95798,
+          "eth": "0.004790",
+          "usd": "9.5798"
+        },
+        "addStudentScore": {
+          "gas": 90708,
+          "eth": "0.004535",
+          "usd": "9.0708"
+        },
+        "storeQuizScore": {
+          "gas": 114054,
+          "eth": "0.005703",
+          "usd": "11.4054"
+        }
+      }
+    },
+    {
+      "gasPrice": "High (100 Gwei)",
+      "costs": {
+        "storePaper": {
+          "gas": 141352,
+          "eth": "0.014135",
+          "usd": "28.2704"
+        },
+        "storeStudentResponse": {
+          "gas": 95798,
+          "eth": "0.009580",
+          "usd": "19.1596"
+        },
+        "addStudentScore": {
+          "gas": 90708,
+          "eth": "0.009071",
+          "usd": "18.1416"
+        },
+        "storeQuizScore": {
+          "gas": 114054,
+          "eth": "0.011405",
+          "usd": "22.8108"
+        }
+      }
+    },
+    {
+      "gasPrice": "Very High (200 Gwei)",
+      "costs": {
+        "storePaper": {
+          "gas": 141352,
+          "eth": "0.028270",
+          "usd": "56.5408"
+        },
+        "storeStudentResponse": {
+          "gas": 95798,
+          "eth": "0.019160",
+          "usd": "38.3192"
+        },
+        "addStudentScore": {
+          "gas": 90708,
+          "eth": "0.018142",
+          "usd": "36.2832"
+        },
+        "storeQuizScore": {
+          "gas": 114054,
+          "eth": "0.022811",
+          "usd": "45.6216"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-12-05T11:09:22.495Z",
+  "system": {
+    "platform": "darwin",
+    "nodeVersion": "v18.20.4"
+  },
+  "tests": [
+    {
+      "size": "Small (1KB)",
+      "algorithm": "AES-CBC",
+      "dataSize": 1351,
+      "encryption": {},
+      "decryption": {},
+      "totalTime": 0,
+      "error": "ENOENT: no such file or directory, open '/Users/apple/Desktop/Projects/Edu_Dao/backend/aesKeys/aes_key.pem'"
+    },
+    {
+      "size": "Medium (10KB)",
+      "algorithm": "AES-CBC",
+      "dataSize": 10365,
+      "encryption": {},
+      "decryption": {},
+      "totalTime": 0,
+      "error": "ENOENT: no such file or directory, open '/Users/apple/Desktop/Projects/Edu_Dao/backend/aesKeys/aes_key.pem'"
+    },
+    {
+      "size": "Large (50KB)",
+      "algorithm": "AES-CBC",
+      "dataSize": 51421,
+      "encryption": {},
+      "decryption": {},
+      "totalTime": 0,
+      "error": "ENOENT: no such file or directory, open '/Users/apple/Desktop/Projects/Edu_Dao/backend/aesKeys/aes_key.pem'"
+    },
+    {
+      "size": "Extra Large (100KB)",
+      "algorithm": "AES-CBC",
+      "dataSize": 102497,
+      "encryption": {},
+      "decryption": {},
+      "totalTime": 0,
+      "error": "ENOENT: no such file or directory, open '/Users/apple/Desktop/Projects/Edu_Dao/backend/aesKeys/aes_key.pem'"
+    },
+    {
+      "size": "Tiny (100 bytes)",
+      "algorithm": "RSA-OAEP",
+      "dataSize": 61,
+      "encryption": {
+        "time": "10.407",
+        "size": 344
+      },
+      "decryption": {
+        "time": "56.275",
+        "success": true
+      },
+      "totalTime": "66.682"
+    },
+    {
+      "size": "Small (200 bytes)",
+      "algorithm": "RSA-OAEP",
+      "dataSize": 111,
+      "encryption": {
+        "time": "2.197",
+        "size": 344
+      },
+      "decryption": {
+        "time": "28.999",
+        "success": true
+      },
+      "totalTime": "31.196"
+    }
+  ]
+}

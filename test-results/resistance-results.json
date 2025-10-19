@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-12-05T11:08:56.203Z",
+  "summary": {
+    "totalTests": 19,
+    "passed": 19,
+    "failed": 0,
+    "warnings": 2
+  },
+  "results": {
+    "passed": [
+      "Resisted premature access via current time",
+      "Resisted premature access near unlock time",
+      "Resisted partial time manipulation",
+      "Time-lock properly enforced and released",
+      "Resisted concurrent premature access attempts",
+      "Resisted time synchronization exploit",
+      "Transaction replay handled correctly",
+      "Data integrity maintained across operations",
+      "Data persists through block confirmations",
+      "Transaction ordering maintained",
+      "Prevented unauthorized paper retrieval",
+      "Student data properly isolated",
+      "CID enumeration not possible (no list function)",
+      "Brute-force paper ID guessing ineffective",
+      "Quiz score privacy maintained per student",
+      "CID protected before unlock time",
+      "CID properly released after unlock",
+      "Handled 50 papers without DoS",
+      "Handled concurrent access from multiple users"
+    ],
+    "failed": [],
+    "warnings": [
+      "Score system allows multiple entries - consider if single entry per student is desired",
+      "CID visible in public storage mapping - consider encrypting CID if absolute privacy needed"
+    ]
+  },
+  "overallStatus": "SECURE"
+}

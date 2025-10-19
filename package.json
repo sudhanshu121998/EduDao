@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "test": "hardhat test",
+    "test:efficiency": "hardhat test test/efficiency-tests.js",
+    "test:security": "hardhat test test/security-penetration-tests.js",
+    "test:resistance": "hardhat test test/resistance-tests.js",
+    "test:gas": "REPORT_GAS=true hardhat test test/gas-optimization-report.js",
+    "test:all": "hardhat test test/efficiency-tests.js test/security-penetration-tests.js test/resistance-tests.js",
+    "test:backend-encryption": "cd backend && node test/encryption-benchmark.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "chai-as-promised": "^7.1.1",
+    "hardhat": "^2.22.19",
+    "hardhat-gas-reporter": "^1.0.10"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
+  }
+}
